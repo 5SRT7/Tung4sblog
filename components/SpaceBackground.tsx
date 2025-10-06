@@ -58,7 +58,7 @@ export default function SpaceBackground() {
       for (let i = 0; i < starCount; i++) {
         // 使用更真实的分布 - 更多的远处小星星
         const depthType = Math.random()
-        let depth, size, opacity, speed,
+        let depth, size, opacity, speed
         if (depthType < 0.6) {
           // 60% 的星星在远处 - 速度大幅降低
           depth = Math.random() * 0.5 + 0.5 // 0.5 - 1.0
