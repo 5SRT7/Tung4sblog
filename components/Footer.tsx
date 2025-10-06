@@ -13,11 +13,8 @@ export default function Footer() {
           <SocialIcon kind="youtube" href={siteMetadata.youtube} size={6} />
           <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size={6} />
           <SocialIcon kind="twitter" href={siteMetadata.twitter} size={6} />
-          <SocialIcon kind="bluesky" href={siteMetadata.bluesky} size={6} />
           <SocialIcon kind="x" href={siteMetadata.x} size={6} />
           <SocialIcon kind="instagram" href={siteMetadata.instagram} size={6} />
-          <SocialIcon kind="threads" href={siteMetadata.threads} size={6} />
-          <SocialIcon kind="medium" href={siteMetadata.medium} size={6} />
           <SocialIcon kind="bilibili" href={siteMetadata.bilibili} size={6} />
           <SocialIcon kind="xiaohongshu" href={siteMetadata.xiaohongshu} size={6} />
           <SocialIcon kind="douyin" href={siteMetadata.douyin} size={6} />
