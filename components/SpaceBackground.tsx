@@ -19,7 +19,7 @@ interface Star {
 
 export default function SpaceBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number | null>(null)
   const { resolvedTheme } = useTheme()
 
   const [stars, setStars] = useState<Star[]>([])
