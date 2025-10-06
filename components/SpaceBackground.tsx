@@ -71,7 +71,7 @@ export default function SpaceBackground() {
           size = Math.random() * 1 + 0.5
           opacity = Math.random() * 0.5 + 0.2
           speed = Math.random() * 0.001 + 0.0003 // 降低速度
-        } 
+        }
         // 为星星添加随机横向速度，模拟从身边划过的效果 - 降低横向速度
         const angle = Math.random() * Math.PI * 2
         const velocityScale = (1 - depth) * 0.005 // 降低横向速度系数
@@ -88,13 +88,14 @@ export default function SpaceBackground() {
             .map((_, i) => (i + 1) * 0.15), // 递增的透明度
           color: colors[Math.floor(Math.random() * colors.length)],
           vx: Math.cos(angle) * velocityScale,
-          vy: Math.sin(angle) * velocityScale
+          vy: Math.sin(angle) * velocityScale,
         })
       }
       setStars(newStars)
     }
     initializeStars()
   }, [resolvedTheme])
+
   // Handle mouse events
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -146,7 +147,7 @@ export default function SpaceBackground() {
       } else {
         ctx.fillStyle = '#000000'
         ctx.fillRect(0, 0, canvas.width, canvas.height)
-        
+
         // 微弱的背景星星
         ctx.save()
         ctx.globalAlpha = 0.02
@@ -166,7 +167,7 @@ export default function SpaceBackground() {
       const centerY = canvas.height / 2
 
       // Update and draw stars
-      const updatedStars = stars.map(star => {
+      const updatedStars = stars.map((star) => {
         // 应用透视投影
         const scale = 1 / star.z
         const x = centerX + star.x * centerX * scale
@@ -200,48 +201,48 @@ export default function SpaceBackground() {
             star.z = Math.random() * 0.15 + 0.05
             star.speed = Math.random() * 0.002 + 0.0008 // 同步更新重置后的速度
           }
-          
+
           // 重置位置在屏幕范围内
           star.x = Math.random() * 1.8 - 0.9
           star.y = Math.random() * 1.8 - 0.9
-          
+
           // 重置速度和方向 - 降低重置后的横向速度
           const angle = Math.random() * Math.PI * 2
           const velocityScale = (1 - star.z) * 0.005 // 降低重置后的横向速度
           star.vx = Math.cos(angle) * velocityScale
           star.vy = Math.sin(angle) * velocityScale
-          
+
           const colors = getStarColors(resolvedTheme || 'dark')
           star.color = colors[Math.floor(Math.random() * colors.length)]
         }
 
         // 判断是否处于高速状态
         const isHighSpeed = baseSpeedMultiplier > 1
-        
+
         // 高速时绘制星球大战风格的线条拖尾
         if (isHighSpeed) {
           ctx.save()
-          
+
           // 计算拖尾方向（运动反方向）
           const trailDirectionX = -star.vx
           const trailDirectionY = -star.vy
-          
+
           // 根据速度计算拖尾长度
           const trailLength = Math.min(currentSpeed * 1000 * star.z, 200)
-          
+
           // 拖尾起点和终点
           const startX = x + parallaxX
           const startY = y + parallaxY
           const endX = startX + trailDirectionX * trailLength
           const endY = startY + trailDirectionY * trailLength
-          
+
           // 创建线性渐变拖尾
           const gradient = ctx.createLinearGradient(startX, startY, endX, endY)
           const endColor = resolvedTheme === 'light' ? '#ffffff00' : '#00000000'
           gradient.addColorStop(0, star.color)
           gradient.addColorStop(0.7, star.color + '80') // 半透明
           gradient.addColorStop(1, endColor)
-          
+
           // 绘制拖尾线条
           ctx.strokeStyle = gradient
           ctx.lineWidth = Math.min(star.size * scale * 2, 3)
@@ -250,7 +251,7 @@ export default function SpaceBackground() {
           ctx.moveTo(startX, startY)
           ctx.lineTo(endX, endY)
           ctx.stroke()
-          
+
           ctx.restore()
         } else {
           // 正常速度下的拖尾效果
@@ -274,12 +275,12 @@ export default function SpaceBackground() {
 
         // 绘制主星星
         ctx.save()
-        
+
         if (resolvedTheme === 'dark' && star.size > 1) {
           ctx.shadowBlur = 10
           ctx.shadowColor = star.color
         }
-        
+
         ctx.globalAlpha = star.opacity * (1 - star.z)
         ctx.fillStyle = star.color
         ctx.beginPath()
@@ -330,7 +331,7 @@ export default function SpaceBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 -z-20 transition-colors duration-300 overflow-x-hidden"
+      className="fixed inset-0 -z-20 overflow-x-hidden transition-colors duration-300"
       style={{ pointerEvents: 'none' }}
     />
   )
