@@ -89,14 +89,8 @@ export function Xiaohongshu(svgProps: SVGProps<SVGSVGElement>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" {...svgProps}>
       <title>XiaoHongShu</title>
-      <path 
-        fillRule="evenodd" 
-        clipRule="evenodd" 
-        d="M14 8H9V15H14V21H7V28H14V43H21V28H33.0312C33.9561 28 34 28.0733 34 29V35C34 35.9267 33.9561 36 33.0312 36H26V36C26 39.866 29.1653 43 33.0312 43V43C38 43 41 41 41 36V29C41 24 37 21 32 21V16C32 10.7488 28.2409 8 23 8H22C21.4477 8 21 7.55228 21 7V5H14V8ZM24 21C24.5523 21 25 20.5523 25 20V16C25 15.0733 24.6711 15 24 15H21V20C21 20.5523 21.4477 21 22 21H24Z"
-      />
-      <path 
-        d="M41 10.5C41 12.433 39.433 14 37.5 14C36.5207 14 34 14 34 14C34 14 34 11.4537 34 10.5C34 8.567 35.567 7 37.5 7C39.433 7 41 8.567 41 10.5Z"
-      />
+      <path fillRule="evenodd" clipRule="evenodd" d="M14 8H9V15H14V21H7V28H14V43H21V28H33.0312C33.9561 28 34 28.0733 34 29V35C34 35.9267 33.9561 36 33.0312 36H26V36C26 39.866 29.1653 43 33.0312 43V43C38 43 41 41 41 36V29C41 24 37 21 32 21V16C32 10.7488 28.2409 8 23 8H22C21.4477 8 21 7.55228 21 7V5H14V8ZM24 21C24.5523 21 25 20.5523 25 20V16C25 15.0733 24.6711 15 24 15H21V20C21 20.5523 21.4477 21 22 21H24Z" />
+      <path d="M41 10.5C41 12.433 39.433 14 37.5 14C36.5207 14 34 14 34 14C34 14 34 11.4537 34 10.5C34 8.567 35.567 7 37.5 7C39.433 7 41 8.567 41 10.5Z" />
     </svg>
   )
 }
@@ -105,16 +99,8 @@ export function Douyin(svgProps: SVGProps<SVGSVGElement>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="20 5 22 40" {...svgProps}>
       <title>DouYin</title>
-      <path 
-        fillRule="evenodd" 
-        clipRule="evenodd" 
-        d="M35 17a6 6 0 0 1-6-6h-5v18.5a3.5 3.5 0 1 1-3.5-3.5H22v-5h-1.5a8.5 8.5 0 1 0 8.5 8.5v-9.279A10.948 10.948 0 0 0 35 22h.5v-5H35Z"
-      />
-      <path 
-        fillRule="evenodd" 
-        clipRule="evenodd" 
-        d="M34 16a6 6 0 0 1-6-6h-5v18.5a3.5 3.5 0 1 1-3.5-3.5H21v-5h-1.5a8.5 8.5 0 1 0 8.5 8.5v-9.279A10.948 10.948 0 0 0 34 21h.5v-5H34Z"
-      />
+      <path fillRule="evenodd" clipRule="evenodd" d="M35 17a6 6 0 0 1-6-6h-5v18.5a3.5 3.5 0 1 1-3.5-3.5H22v-5h-1.5a8.5 8.5 0 1 0 8.5 8.5v-9.279A10.948 10.948 0 0 0 35 22h.5v-5H35Z" />
+      <path fillRule="evenodd" clipRule="evenodd" d="M34 16a6 6 0 0 1-6-6h-5v18.5a3.5 3.5 0 1 1-3.5-3.5H21v-5h-1.5a8.5 8.5 0 1 0 8.5 8.5v-9.279A10.948 10.948 0 0 0 34 21h.5v-5H34Z" />
     </svg>
   )
 }
