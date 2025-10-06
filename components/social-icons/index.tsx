@@ -23,7 +23,7 @@ const components = {
   instagram: Instagram,
   bilibili: Bilibili,
   xiaohongshu: Xiaohongshu,
-  douyin: Douyin
+  douyin: Douyin,
 }
 
 type SocialIconProps = {
