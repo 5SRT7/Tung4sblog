@@ -24,7 +24,7 @@ export default function Home({ posts }) {
             const { slug, date, title, summary, tags } = post
             return (
               <li key={slug} className="py-10">
-                <article className="bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20 dark:border-gray-700/20">
+                <article className="rounded-xl border border-white/20 bg-white/50 p-6 shadow-lg backdrop-blur-sm dark:border-gray-700/20 dark:bg-gray-900/50">
                   <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                     <dl>
                       <dt className="sr-only">Published on</dt>
@@ -38,7 +38,7 @@ export default function Home({ posts }) {
                           <h2 className="text-2xl leading-8 font-bold tracking-tight">
                             <Link
                               href={`/blog/${slug}`}
-                              className="text-gray-900 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 transition-colors"
+                              className="transition-colors hover:text-pink-600 dark:text-gray-100 dark:hover:text-pink-400"
                             >
                               {title}
                             </Link>
@@ -56,7 +56,7 @@ export default function Home({ posts }) {
                       <div className="text-base leading-6 font-medium">
                         <Link
                           href={`/blog/${slug}`}
-                          className="text-pink-500 hover:text-pink-600 dark:hover:text-pink-400 transition-colors"
+                          className="transition-colors hover:text-pink-600 dark:hover:text-pink-400"
                           aria-label={`Read more: "${title}"`}
                         >
                           Read more &rarr;
@@ -74,7 +74,7 @@ export default function Home({ posts }) {
         <div className="flex justify-end text-base leading-6 font-medium">
           <Link
             href="/blog"
-            className="text-pink-500 hover:text-pink-600 dark:hover:text-pink-400 transition-colors"
+            className="transition-colors hover:text-pink-600 dark:hover:text-pink-400"
             aria-label="All posts"
           >
             All Posts &rarr;
