@@ -58,8 +58,7 @@ export default function SpaceBackground() {
       for (let i = 0; i < starCount; i++) {
         // 使用更真实的分布 - 更多的远处小星星
         const depthType = Math.random()
-        let depth, size, opacity, speed
-        
+        let depth, size, opacity, speed,
         if (depthType < 0.6) {
           // 60% 的星星在远处 - 速度大幅降低
           depth = Math.random() * 0.5 + 0.5 // 0.5 - 1.0
@@ -73,11 +72,9 @@ export default function SpaceBackground() {
           opacity = Math.random() * 0.5 + 0.2
           speed = Math.random() * 0.001 + 0.0003 // 降低速度
         } 
-
         // 为星星添加随机横向速度，模拟从身边划过的效果 - 降低横向速度
         const angle = Math.random() * Math.PI * 2
         const velocityScale = (1 - depth) * 0.005 // 降低横向速度系数
-        
         newStars.push({
           x: Math.random() * 2 - 1,
           y: Math.random() * 2 - 1,
@@ -94,13 +91,10 @@ export default function SpaceBackground() {
           vy: Math.sin(angle) * velocityScale
         })
       }
-
       setStars(newStars)
     }
-
     initializeStars()
   }, [resolvedTheme])
-
   // Handle mouse events
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
