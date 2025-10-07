@@ -51,7 +51,7 @@ export default function SpaceBackground() {
   // Initialize stars
   useEffect(() => {
     const initializeStars = () => {
-      const starCount = 1500
+      const starCount = 500
       const colors = getStarColors(resolvedTheme || 'dark')
       const newStars: Star[] = []
 
@@ -59,14 +59,14 @@ export default function SpaceBackground() {
         // 使用更真实的分布 - 更多的远处小星星
         const depthType = Math.random()
         let depth, size, opacity, speed
-        if (depthType < 0.6) {
-          // 60% 的星星在远处 - 速度大幅降低
+        if (depthType < 0.3) {
+          // 30% 的星星在远处 - 速度大幅降低
           depth = Math.random() * 0.5 + 0.5 // 0.5 - 1.0
           size = Math.random() * 0.6 + 0.1
           opacity = Math.random() * 0.3 + 0.05
           speed = Math.random() * 0.0005 + 0.0001 // 大幅降低速度
         } else {
-          // 40% 的星星在中等距离 - 速度降低
+          // 70% 的星星在中等距离 - 速度降低
           depth = Math.random() * 0.3 + 0.2 // 0.2 - 0.5
           size = Math.random() * 1 + 0.5
           opacity = Math.random() * 0.5 + 0.2
