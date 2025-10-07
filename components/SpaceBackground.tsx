@@ -51,7 +51,7 @@ export default function SpaceBackground() {
   // Initialize stars
   useEffect(() => {
     const initializeStars = () => {
-      const starCount = 500
+      const starCount = 200
       const colors = getStarColors(resolvedTheme || 'dark')
       const newStars: Star[] = []
 
