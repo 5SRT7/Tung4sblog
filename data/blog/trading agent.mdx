@@ -1,0 +1,112 @@
+---
+title: 'TradingAgents-CN 部署与使用指南'
+date: '2025-10-6'
+tags: ['trading', 'llm', 'multi-agent', 'financial']
+draft: false
+summary: '详细记录TradingAgents-CN多智能体LLM金融交易框架的部署和使用过程，包括环境配置、依赖安装、API设置和实际交易分析演示。'
+---
+
+# TradingAgents-CN 部署与使用指南
+
+## 项目介绍
+
+**官方项目**：[TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents)  
+TradingAgents：多智能体LLM金融交易框架
+
+**中文增强版**：[hsliuping/TradingAgents-CN](https://github.com/hsliuping/TradingAgents-CN)  
+基于多智能体LLM的中文金融交易框架 - TradingAgents中文增强版
+
+## 部署步骤
+
+### 1. 下载项目并创建虚拟环境
+
+```bash
+# 下载项目到本地
+git clone https://github.com/hsliuping/TradingAgents-CN.git
+
+# 创建conda虚拟环境
+conda create -n trading-agents python=3.8
+conda activate trading-agents
+```
+
+### 2. 安装依赖
+
+```bash
+# 安装项目依赖
+pip install -r requirements.txt
+```
+
+**注意**：如果安装过程中出现peewee依赖错误，可以手动安装：
+
+```bash
+pip install peewee -i https://pypi.tuna.tsinghua.edu.cn/simple/
+```
+![peewee报错](static/images/trading-agent/image1.png)
+
+### 3. 运行项目
+
+```bash
+python start_web.py
+```
+
+成功启动后，在浏览器中访问项目地址。
+![后台成功启动](static/images/trading-agent/image2.png)
+
+## 使用流程
+
+### 1. 登录系统
+
+- **管理员用户名**：`admin`
+- **密码**：`admin123`
+
+![登录界面](static/images/trading-agent/image3.png)
+
+### 2. 配置API信息
+
+1. 将项目根目录的 `.env.example` 文件复制并重命名为 `.env`
+2. 填写对应的API信息：
+   - 查询信息的两个API
+   - LLM Provider选择 **deepseek**
+
+![API配置](static/images/trading-agent/image4.png)
+![DeepSeek配置](static/images/trading-agent/image5.png)
+
+### 3. 开始分析
+
+1. 选择配置好的LLM模型
+2. 填写要查询的股票代码（如茅台）
+3. 开始分析
+
+![股票分析界面](static/images/trading-agent/image6.png)
+
+## 分析结果
+
+系统会生成详细的分析报告，包括：
+
+- 股票基本面分析
+- 技术指标分析
+- 市场情绪分析
+- 交易建议
+
+![分析结果1](static/images/trading-agent/image7.png)
+![分析结果2](static/images/trading-agent/image8.png)
+
+### 报告导出
+
+分析结果可以保存为文档格式，方便后续查阅。
+
+![保存文档](static/images/trading-agent/image9.png)
+
+## 成本统计
+
+使用DeepSeek API进行分析，单次分析成本约为 **0.11元**，性价比良好。
+
+## 注意事项
+
+1. **依赖安装**：如遇依赖问题，可尝试手动安装或更换镜像源
+2. **API配置**：确保所有API密钥正确填写
+3. **网络连接**：保持稳定的网络连接以确保LLM服务正常调用
+4. **成本控制**：关注API使用量，合理控制分析频率
+
+这个框架为中文用户提供了便捷的LLM金融分析工具，通过多智能体协作生成全面的交易分析报告。
+```
